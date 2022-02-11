@@ -1,0 +1,61 @@
+<NavigationBar>:
+	manager: screen_manager
+    orientation: 'vertical'
+
+    Manager:
+        id: screen_manager
+
+    ActionBar:
+        size_hint_y: 0.1
+        background_image: ''
+	    background_color: (1, 1, 1, 1)
+		canvas.before:
+	        Color:
+	            rgba: (0, 0, 0, 1)
+	        Line:
+	            width: 1
+	            rectangle: (self.x, self.y, self.width, self.height)
+            
+        ActionView:
+            ActionPrevious:
+            	with_previous: False
+			    size_hint: None, None
+    			size: 0, 0
+
+            ActionButton:
+                text: 'ホーム'
+                color: app.theme_color if root.manager.current=='home' else (0, 0, 0, 1)
+                on_release: root.manager.current = 'home'
+                size_hint_x: 1 / len(root.manager.screens)
+                font_size: sp(20)
+
+            ActionButton:
+                text: '遊びかた'
+                color: app.theme_color if root.manager.current=='howto' else (0, 0, 0, 1)
+                on_release: root.manager.current = 'howto'
+                size_hint_x: 1 / len(root.manager.screens)
+                font_size: sp(20)
+
+            ActionButton:
+                text: 'ゲーム'
+                color: app.theme_color if root.manager.current=='game' else (0, 0, 0, 1)
+                on_release: root.manager.current = 'game'
+                size_hint_x: 1 / len(root.manager.screens)
+                font_size: sp(20)
+
+<Manager>:
+    homeScreen: homeScreen
+    howtoScreen: howtoScreen
+    gameScreen: gameScreen
+
+    HomeScreen:
+        id: homeScreen
+        name: 'home'
+
+    HowtoScreen:
+        id: howtoScreen
+        name: 'howto'
+
+    GameScreen:
+        id: gameScreen
+        name: 'game'

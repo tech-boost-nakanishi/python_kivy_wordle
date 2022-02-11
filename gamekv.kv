@@ -5,22 +5,11 @@
 
 		canvas.before:
 			Color:
-	            rgba: (0, 0, 1, 1)
+	            rgba: (1, 1, 1, 1)
 	        Rectangle:
 	            pos: self.pos
 	            size: self.size
 
 	    Label:
 	    	text: 'ゲーム'
-	    	color: (1, 1, 1, 1)
-
-	    GridLayout:
-	    	cols: 2
-
-		    Button:
-		    	text: 'ホームへ'
-		    	on_press: root.manager.current = 'home'
-
-		    Button:
-		    	text: '遊びかたへ'
-		    	on_press: root.manager.current = 'howto'
+	    	color: (0, 0, 0, 1)
