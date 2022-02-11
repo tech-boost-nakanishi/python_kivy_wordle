@@ -20,12 +20,9 @@ class GameScreen(Screen):
 	pass
 
 class NavigationBar(BoxLayout):
-	manager = ObjectProperty(None)
+	pass
 
 class Manager(ScreenManager):
-	homeScreen = ObjectProperty(None)
-	howtoScreen = ObjectProperty(None)
-	gameScreen = ObjectProperty(None)
 
 	def __init__(self, **kwargs):
 		super(Manager, self).__init__(**kwargs)
