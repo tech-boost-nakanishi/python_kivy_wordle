@@ -1,3 +1,14 @@
+<TitleLabel@Label>:
+	font_size: self.width / 2
+	size_hint: (self.parent.width / 6, None)
+	size: (self.parent.width / 7, self.parent.width / 7)
+	canvas.before:
+		Color:
+            rgba: (0, .5, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <HomeScreen>:
 	BoxLayout:
 		orientation: 'vertical'
@@ -10,6 +21,61 @@
 	            pos: self.pos
 	            size: self.size
 
-	    Label:
-	    	text: 'ホーム'
-	    	color: (0, 0, 0, 1)
+	    BoxLayout:
+	    	orientation: 'horizontal'
+	    	size_hint_x: .96
+	    	pos_hint: {'center_x': .5}
+	    	spacing: 5
+
+	    	TitleLabel:
+	    		text: 'W'
+
+	    	TitleLabel:
+	    		text: 'O'
+
+	    	TitleLabel:
+	    		text: 'R'
+
+	    	TitleLabel:
+	    		text: 'D'
+
+	    	TitleLabel:
+	    		text: 'L'
+
+	    	TitleLabel:
+	    		text: 'E'
+
+	    FloatLayout:
+		    Button:
+		        text: 'スタート'
+		        font_size: self.width / 7
+		        size_hint: (.6, .35)
+	        	pos_hint: {'center_x':0.5, 'y': 0.2}
+		        background_normal: ''
+		        background_color: 0,0,0,0
+		        canvas.before:
+		            Color:
+		                rgba: (0, .8, .3, 1) if self.state=='normal' else (0, .8, .3, .5)
+		            RoundedRectangle:
+		                pos: self.pos
+		                size: self.size
+		                radius: [20,]
+		        on_press:
+		            root.manager.current = 'game'
+		FloatLayout:
+			Button:
+		        text: '遊びかた'
+		        font_size: self.width / 7
+		        size_hint: (.6, .35)
+	        	pos_hint: {'center_x':0.5, 'y': 0.7}
+		        background_normal: ''
+		        background_color: 0,0,0,0
+		        canvas.before:
+		            Color:
+		                rgba: (0, .7, 0, 1) if self.state=='normal' else (0, .7, 0, .5)
+		            RoundedRectangle:
+		                pos: self.pos
+		                size: self.size
+		                radius: [20,]
+		        on_press:
+		            root.manager.current = 'howto'

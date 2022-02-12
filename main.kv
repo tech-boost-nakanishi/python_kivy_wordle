@@ -24,21 +24,21 @@
 
             ActionButton:
                 text: 'ホーム'
-                color: app.theme_color if root.manager.current=='home' else (0, 0, 0, 1)
+                color: app.navigation_active_color if root.manager.current=='home' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'home'
                 size_hint_x: 1 / len(root.manager.screens)
                 font_size: sp(20)
 
             ActionButton:
                 text: '遊びかた'
-                color: app.theme_color if root.manager.current=='howto' else (0, 0, 0, 1)
+                color: app.navigation_active_color if root.manager.current=='howto' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'howto'
                 size_hint_x: 1 / len(root.manager.screens)
                 font_size: sp(20)
 
             ActionButton:
                 text: 'ゲーム'
-                color: app.theme_color if root.manager.current=='game' else (0, 0, 0, 1)
+                color: app.navigation_active_color if root.manager.current=='game' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'game'
                 size_hint_x: 1 / len(root.manager.screens)
                 font_size: sp(20)

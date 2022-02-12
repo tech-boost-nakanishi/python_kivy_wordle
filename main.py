@@ -29,7 +29,7 @@ class Manager(ScreenManager):
 		self.transition = NoTransition()
 
 class GameApp(App):
-	theme_color = ListProperty([0, 1, 0, 1])
+	navigation_active_color = ListProperty([0, 1, 0, 1])
 
 	def __init__(self, **kwargs):
 		super(GameApp, self).__init__(**kwargs)
