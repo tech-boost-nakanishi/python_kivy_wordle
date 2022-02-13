@@ -4,6 +4,8 @@ from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
+from kivy.core.window import Window
+Window.size = (360, 640)
 
 Builder.load_file('main.kv')
 Builder.load_file('home.kv')
@@ -17,7 +19,15 @@ class HowtoScreen(Screen):
     pass
 
 class GameScreen(Screen):
-	pass
+
+	def __init__(self, **kwargs):
+		super(GameScreen, self).__init__(**kwargs)
+		self.CHANCE = 6
+		self.LENGTH = 5
+
+		# ゲームクラスのインスタンス生成
+		import game
+		self.game = game.Game(self.CHANCE, self.LENGTH)
 
 class NavigationBar(BoxLayout):
 	pass
