@@ -30,6 +30,9 @@ class Manager(ScreenManager):
 
 class GameApp(App):
 	navigation_active_color = ListProperty([0, 1, 0, 1])
+	correct_color = ListProperty([0, .5, 0, 1])
+	close_color = ListProperty([.9, .9, 0, 1])
+	miss_color = ListProperty([.5, .5, .5, 1])
 
 	def __init__(self, **kwargs):
 		super(GameApp, self).__init__(**kwargs)

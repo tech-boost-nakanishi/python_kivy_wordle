@@ -2,6 +2,7 @@
 	BoxLayout:
 		orientation: 'vertical'
 		size: root.size
+		padding: 30
 
 		canvas.before:
 			Color:
@@ -10,6 +11,89 @@
 	            pos: self.pos
 	            size: self.size
 
-	    Label:
-	    	text: '遊びかた'
-	    	color: (0, 0, 0, 1)
+	    FloatLayout:
+		    Label:
+		    	text: '遊びかた'
+		    	color: (0, 0, 0, 1)
+		    	font_size: root.width / 8
+		    	pos_hint: {'center_x': .5, 'y': .1}
+
+		FloatLayout:
+			Label:
+				text:
+					'6回のチャンスの中でヒントをもとに5文字の英単語を推測するゲームです'
+				color: (0, 0, 0, 1)
+		        font_size: root.width / 16
+		        text_size: self.size
+		        padding_x: 10
+		        halign: 'center'
+		        pos_hint: {'center_x': .5, 'y': .9}
+
+		FloatLayout:
+			GridLayout:
+				cols: 3
+				spacing: 10
+				pos_hint: {'center_x': .5, 'y': .6}
+
+				Label:
+					text: ''
+					size_hint_x: None
+					width: root.width * 0.2
+					canvas.before:
+						Color:
+				            rgba: app.correct_color
+				        Rectangle:
+				            pos: self.pos
+				            size: self.size
+
+				Label:
+					text: '・・・'
+					size_hint_x: None
+					width: root.width * 0.05
+					color: (0, 0, 0, 1)
+
+				Label:
+					text: '文字と位置が両方正しい'
+					font_size: root.width / 20
+					color: (0, 0, 0, 1)
+					size_hint_x: None
+					width: root.width * 0.6
+					text_size: (root.width * 0.5, None)
+
+				Label:
+					text: ''
+					canvas.before:
+						Color:
+				            rgba: app.close_color
+				        Rectangle:
+				            pos: self.pos
+				            size: self.size
+
+				Label:
+					text: '・・・'
+					color: (0, 0, 0, 1)
+
+				Label:
+					text: '文字は使われているが位置が正しくない'
+					font_size: root.width / 20
+					color: (0, 0, 0, 1)
+					text_size: (root.width * 0.5, None)
+
+				Label:
+					text: ''
+					canvas.before:
+						Color:
+				            rgba: app.miss_color
+				        Rectangle:
+				            pos: self.pos
+				            size: self.size
+
+				Label:
+					text: '・・・'
+					color: (0, 0, 0, 1)
+
+				Label:
+					text: '文字と位置が両方正しくない'
+					font_size: root.width / 20
+					color: (0, 0, 0, 1)
+					text_size: (root.width * 0.5, None)
