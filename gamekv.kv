@@ -1,3 +1,16 @@
+<StringButton@Button>:
+	color: (0, 0, 0, 1)
+	background_normal: ''
+	background_down: ''
+	background_color: (.75, .75, .75, 1)
+	font_size: self.width / 1.5
+
+<EnterButton@StringButton>:
+	font_size: self.width / 3.3
+
+<BackButton@StringButton>:
+	font_size: self.width / 3
+
 <GameScreen>:
 	BoxLayout:
 		orientation: 'vertical'
@@ -13,3 +26,136 @@
 	    Label:
 	    	text: 'ゲーム'
 	    	color: (0, 0, 0, 1)
+
+	    BoxLayout:
+	    	orientation: 'vertical'
+	    	size_hint: (1, None)
+	    	height: root.height * 0.25
+	    	padding: 5
+
+	    	BoxLayout:
+	    		orientation: 'horizontal'
+	    		spacing: 2
+
+	    		StringButton:
+	    			id: Q
+	    			text: 'Q'
+
+	    		StringButton:
+	    			id: W
+	    			text: 'W'
+
+	    		StringButton:
+	    			id: E
+	    			text: 'E'
+
+	    		StringButton:
+	    			id: R
+	    			text: 'R'
+
+	    		StringButton:
+	    			id: T
+	    			text: 'T'
+
+	    		StringButton:
+	    			id: Y
+	    			text: 'Y'
+
+	    		StringButton:
+	    			id: U
+	    			text: 'U'
+
+	    		StringButton:
+	    			id: I
+	    			text: 'I'
+
+	    		StringButton:
+	    			id: O
+	    			text: 'O'
+
+	    		StringButton:
+	    			id: P
+	    			text: 'P'
+
+	    	BoxLayout:
+	    		orientation: 'horizontal'
+	    		padding: 10, 2
+	    		spacing: 2
+
+	    		StringButton:
+	    			id: A
+	    			text: 'A'
+
+	    		StringButton:
+	    			id: S
+	    			text: 'S'
+
+	    		StringButton:
+	    			id: D
+	    			text: 'D'
+
+	    		StringButton:
+	    			id: F
+	    			text: 'F'
+
+	    		StringButton:
+	    			id: G
+	    			text: 'G'
+
+	    		StringButton:
+	    			id: H
+	    			text: 'H'
+
+	    		StringButton:
+	    			id: J
+	    			text: 'J'
+
+	    		StringButton:
+	    			id: K
+	    			text: 'K'
+
+	    		StringButton:
+	    			id: L
+	    			text: 'L'
+
+	    	BoxLayout:
+	    		orientation: 'horizontal'
+	    		spacing: 2
+
+	    		EnterButton:
+	    			id: ENTER
+	    			text: 'ENTER'
+	    			size_hint_x: 1.4
+
+	    		StringButton:
+	    			id: Z
+	    			text: 'Z'
+
+	    		StringButton:
+	    			id: X
+	    			text: 'X'
+
+	    		StringButton:
+	    			id: C
+	    			text: 'C'
+
+	    		StringButton:
+	    			id: V
+	    			text: 'V'
+
+	    		StringButton:
+	    			id: B
+	    			text: 'B'
+
+	    		StringButton:
+	    			id: N
+	    			text: 'N'
+
+	    		StringButton:
+	    			id: M
+	    			text: 'M'
+
+	    		BackButton:
+	    			id: BACK
+	    			text: 'BACK'
+	    			size_hint_x: 1.2

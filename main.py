@@ -4,8 +4,6 @@ from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
-from kivy.core.window import Window
-Window.size = (360, 640)
 
 Builder.load_file('main.kv')
 Builder.load_file('home.kv')
