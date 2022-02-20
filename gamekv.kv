@@ -1,8 +1,22 @@
-<StringButton@Button>:
-	color: (0, 0, 0, 1)
+<StringBox>:
+	font_size: self.width / 1.5
 	background_normal: ''
 	background_down: ''
-	background_color: (.75, .75, .75, 1)
+	canvas.before:
+        Color:
+            rgba:
+            	(0, 0, 0, 1) if self.background_color==app.blank_color and self.text!='' \
+            	else (.75, .75, .75, 1) if self.background_color==app.blank_color \
+            	else self.background_color
+        Line:
+            width: 3
+            rectangle: (self.x, self.y, self.width, self.height)
+
+<StringButton@Button>:
+	background_normal: ''
+	background_down: ''
+	background_color: app.keyboard_default_color
+	color: (0, 0, 0, 1) if self.background_color==app.keyboard_default_color else (1, 1, 1, 1)
 	font_size: self.width / 1.5
 
 <EnterButton@StringButton>:
@@ -23,14 +37,49 @@
 	            pos: self.pos
 	            size: self.size
 
-	    Label:
-	    	text: 'ゲーム'
-	    	color: (0, 0, 0, 1)
+	    BoxLayout:
+	    	orientation: 'horizontal'
+	    	size_hint_y: .2
+	    	padding: 5
+
+	    	Button:
+	    		size_hint: (None, None)
+	    		size: (self.parent.height * .85, self.parent.height * .85)
+		        background_normal: ''
+        		background_color: (0,0,0,0)
+		        canvas.before:
+		            Color:
+		                rgba: (0, .4, 0, 1)
+		            RoundedRectangle:
+		                pos: self.pos
+		                size: self.size
+		                radius: [20,]
+		        on_press: root.restart()
+		        Image:
+		            source: 'res/images/restart.png'
+		            center_x: self.parent.center_x - (self.parent.width / 4)
+		            center_y: self.parent.center_y
+		            width: self.parent.width / 1.8
+
+		    Label:
+		    	id: resultlabel
+		    	text: ''
+		    	color: (0, 0, 0, 1)
+		    	text_size: self.size
+		    	font_size: self.width / (len(self.text) + 5)
+		    	halign: 'center'
+		    	valign: 'middle'
+
+	    BoxLayout:
+		    GridLayout:
+		    	id: stringboxes
+		    	spacing: 10
+		    	padding: 30, 10
 
 	    BoxLayout:
 	    	orientation: 'vertical'
 	    	size_hint: (1, None)
-	    	height: root.height * 0.25
+	    	height: root.height * 0.3
 	    	padding: 5
 
 	    	BoxLayout:
@@ -40,42 +89,52 @@
 	    		StringButton:
 	    			id: Q
 	    			text: 'Q'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: W
 	    			text: 'W'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: E
 	    			text: 'E'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: R
 	    			text: 'R'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: T
 	    			text: 'T'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: Y
 	    			text: 'Y'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: U
 	    			text: 'U'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: I
 	    			text: 'I'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: O
 	    			text: 'O'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: P
 	    			text: 'P'
+	    			on_press: root.string_pressed(self.text)
 
 	    	BoxLayout:
 	    		orientation: 'horizontal'
@@ -85,38 +144,47 @@
 	    		StringButton:
 	    			id: A
 	    			text: 'A'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: S
 	    			text: 'S'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: D
 	    			text: 'D'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: F
 	    			text: 'F'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: G
 	    			text: 'G'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: H
 	    			text: 'H'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: J
 	    			text: 'J'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: K
 	    			text: 'K'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: L
 	    			text: 'L'
+	    			on_press: root.string_pressed(self.text)
 
 	    	BoxLayout:
 	    		orientation: 'horizontal'
@@ -126,36 +194,45 @@
 	    			id: ENTER
 	    			text: 'ENTER'
 	    			size_hint_x: 1.4
+	    			on_press: root.enter_pressed()
 
 	    		StringButton:
 	    			id: Z
 	    			text: 'Z'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: X
 	    			text: 'X'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: C
 	    			text: 'C'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: V
 	    			text: 'V'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: B
 	    			text: 'B'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: N
 	    			text: 'N'
+	    			on_press: root.string_pressed(self.text)
 
 	    		StringButton:
 	    			id: M
 	    			text: 'M'
+	    			on_press: root.string_pressed(self.text)
 
 	    		BackButton:
 	    			id: BACK
 	    			text: 'BACK'
 	    			size_hint_x: 1.2
+	    			on_press: root.back_pressed()
