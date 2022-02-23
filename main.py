@@ -162,6 +162,7 @@ class GameApp(App):
 	def __init__(self, **kwargs):
 		super(GameApp, self).__init__(**kwargs)
 		self.title = 'Wordle'
+		self.icon = 'res/images/icon.png'
  
 	def build(self):
 		return NavigationBar()
