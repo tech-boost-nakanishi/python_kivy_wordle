@@ -27,7 +27,7 @@
                 color: app.navigation_active_color if root.manager.current=='home' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'home'
                 size_hint_x: 1 / len(root.manager.screens)
-                font_size: self.width / 7
+                font_size: self.width / 8
                 text_size: self.size
                 halign: 'center'
                 valign: 'bottom'
@@ -36,16 +36,16 @@
                 background_down: ''
                 Image:
                 	source: 'res/images/home_active.png' if root.manager.current=='home' else 'res/images/home.png'
-                	center_x: self.parent.center_x + 3
-                	center_y: self.parent.center_y + (self.parent.height / 6)
-                	width: self.parent.width / 4
+                	center_x: self.parent.center_x
+                	center_y: self.parent.center_y + (root.width / 50)
+                	width: root.width / 11
 
             ActionButton:
                 text: '遊びかた'
                 color: app.navigation_active_color if root.manager.current=='howto' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'howto'
                 size_hint_x: 1 / len(root.manager.screens)
-                font_size: self.width / 7
+                font_size: self.width / 8
                 text_size: self.size
                 halign: 'center'
                 valign: 'bottom'
@@ -54,16 +54,16 @@
                 background_down: ''
                 Image:
                 	source: 'res/images/howto_active.png' if root.manager.current=='howto' else 'res/images/howto.png'
-                	center_x: self.parent.center_x + 3
-                	center_y: self.parent.center_y + (self.parent.height / 6)
-                	width: self.parent.width / 4
+                	center_x: self.parent.center_x
+                	center_y: self.parent.center_y + (root.width / 50)
+                	width: root.width / 11
 
             ActionButton:
                 text: 'ゲーム'
                 color: app.navigation_active_color if root.manager.current=='game' else (0, 0, 0, 1)
                 on_release: root.manager.current = 'game'
                 size_hint_x: 1 / len(root.manager.screens)
-                font_size: self.width / 7
+                font_size: self.width / 8
                 text_size: self.size
                 halign: 'center'
                 valign: 'bottom'
@@ -72,9 +72,9 @@
                 background_down: ''
                 Image:
                 	source: 'res/images/game_active.png' if root.manager.current=='game' else 'res/images/game.png'
-                	center_x: self.parent.center_x + 3
-                	center_y: self.parent.center_y + (self.parent.height / 6)
-                	width: self.parent.width / 4
+                	center_x: self.parent.center_x
+                	center_y: self.parent.center_y + (root.width / 50)
+                	width: root.width / 11
 
 <Manager>:
 
