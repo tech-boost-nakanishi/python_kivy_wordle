@@ -114,6 +114,7 @@ class GameScreen(Screen):
 
 				if self.yindex == self.CHANCE:
 					self.ids.resultlabel.text = self.game.get_word()
+					self.gameover = True
 
 			else:
 				messagethread = threading.Thread(target=self.flash_message, args=('単語リストにありません',))
