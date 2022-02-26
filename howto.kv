@@ -32,7 +32,7 @@
 		FloatLayout:
 			GridLayout:
 				cols: 3
-				spacing: 10
+				spacing: 5
 				pos_hint: {'center_x': .5, 'y': .6}
 
 				Label:
@@ -47,21 +47,29 @@
 				            size: self.size
 
 				Label:
-					text: '・・・'
+					text: '→'
+					valign: 'middle'
+					halign: 'center'
+					font_size: self.width / 1.5 
 					size_hint_x: None
-					width: root.width * 0.05
+					width: root.width * 0.1
 					color: (0, 0, 0, 1)
+					text_size: self.size
 
 				Label:
 					text: '文字と位置が両方正しい'
 					font_size: root.width / 20
 					color: (0, 0, 0, 1)
 					size_hint_x: None
-					width: root.width * 0.6
-					text_size: (root.width * 0.5, None)
+					width: root.width * 0.5
+					text_size: self.size
+					halign: 'left'
+					valign: 'middle'
 
 				Label:
 					text: ''
+					size_hint_x: None
+					width: root.width * 0.2
 					canvas.before:
 						Color:
 				            rgba: app.close_color
@@ -70,17 +78,29 @@
 				            size: self.size
 
 				Label:
-					text: '・・・'
+					text: '→'
+					valign: 'middle'
+					halign: 'center'
+					font_size: self.width / 1.5 
+					size_hint_x: None
+					width: root.width * 0.1
 					color: (0, 0, 0, 1)
+					text_size: self.size
 
 				Label:
 					text: '文字は使われているが位置が正しくない'
 					font_size: root.width / 20
 					color: (0, 0, 0, 1)
-					text_size: (root.width * 0.5, None)
+					text_size: self.size
+					halign: 'left'
+					valign: 'middle'
+					size_hint_x: None
+					width: root.width * 0.5
 
 				Label:
 					text: ''
+					size_hint_x: None
+					width: root.width * 0.2
 					canvas.before:
 						Color:
 				            rgba: app.miss_color
@@ -89,11 +109,21 @@
 				            size: self.size
 
 				Label:
-					text: '・・・'
+					text: '→'
+					valign: 'middle'
+					halign: 'center'
+					font_size: self.width / 1.5 
+					size_hint_x: None
+					width: root.width * 0.1
 					color: (0, 0, 0, 1)
+					text_size: self.size
 
 				Label:
 					text: '文字と位置が両方正しくない'
 					font_size: root.width / 20
 					color: (0, 0, 0, 1)
-					text_size: (root.width * 0.5, None)
+					text_size: self.size
+					halign: 'left'
+					valign: 'middle'
+					size_hint_x: None
+					width: root.width * 0.5
